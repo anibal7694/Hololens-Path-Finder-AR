@@ -6,8 +6,6 @@ using System;
 
 public class CubeBehavior : MonoBehaviour
 {
-
-
     int i = 0;
     int j = 1;
     int z = 0;
@@ -27,8 +25,6 @@ public class CubeBehavior : MonoBehaviour
     public Camera mainCam;
     GameObject cube;
 
-
-
     // Use this for initialization
     void Start()
     {
@@ -39,7 +35,6 @@ public class CubeBehavior : MonoBehaviour
 
     IEnumerator GetRequest1()
     {
-
         while (flag)
         {
             WWW webpage = new WWW("http://10.50.0.73:8080/?sending=" + flag.ToString());
@@ -55,14 +50,12 @@ public class CubeBehavior : MonoBehaviour
 
                 flag = false;
                 StartCoroutine(CoroLoop());
-
             }
             else if (JSONObject.id == 3001)
             {
                 offset.x = -16.3f + JSONObject.xpos;
                 offset.z = -0.6f - JSONObject.zpos;
                 offset.y = 0;
-                //serverReturns.text = "x= "+JSONObject.xpos.ToString() + " z= " + JSONObject.zpos.ToString();
 
                 flag = false;
                 StartCoroutine(CoroLoop());
@@ -73,7 +66,6 @@ public class CubeBehavior : MonoBehaviour
                 offset.x = 13.3f + JSONObject.xpos;
                 offset.z = -1 - JSONObject.zpos;
                 offset.y = 0;
-                //serverReturns.text = "x= "+JSONObject.xpos.ToString() + " z= " + JSONObject.zpos.ToString();
 
                 flag = false;
                 StartCoroutine(CoroLoop());
@@ -115,13 +107,10 @@ public class CubeBehavior : MonoBehaviour
             actualCameraPosition.x = Mathf.Round((Camera.main.transform.position.x + offset.x) * 10f) / 10f;
             actualCameraPosition.y = (int)Camera.main.transform.position.y + (int)offset.y;
             actualCameraPosition.z = Mathf.Round((Camera.main.transform.position.z + offset.z) * 10f) / 10f;
-            //updateText.text = Camera.main.transform.position.ToString();
-            //coordinates.text = "( " + actualCameraPosition.x.ToString() + " , " + actualCameraPosition.y.ToString() + " , " + actualCameraPosition.z.ToString() + " )";
+            
             source = points[i];
             destination = points[j];
 
-            //sourceText.text = "Source :" + source.ToString();
-            //destinationText.text = "Destination: " + destination.ToString();
             if (i == 0 && j == 1)
             {
                 DrawCubes(source - offset, destination - offset);
@@ -138,7 +127,6 @@ public class CubeBehavior : MonoBehaviour
                         StartCoroutine(NewGetRequest());
                         i = 0;
                         j = 1;
-                        //updateText.text = "New X Get Request Done" + i.ToString() + j.ToString();
                         GameObject.FindGameObjectWithTag("cubes").SetActive(false);
                         continue;
                     }
@@ -150,7 +138,6 @@ public class CubeBehavior : MonoBehaviour
                         i = 0;
                         j = 1;
                         GameObject.FindGameObjectWithTag("cubes").SetActive(false);
-                        //updateText.text = "New Z Get Request Done" + i.ToString() + j.ToString();
                         continue;
                     }
                 }
@@ -161,7 +148,6 @@ public class CubeBehavior : MonoBehaviour
                     //j++;
                     for (int i = 0; i < z; i++)
                     {
-                        //Destroy(GameObject.FindGameObjectWithTag("cubes"));
                         GameObject.FindGameObjectWithTag("cubes").SetActive(false);
                     }
                     changeInDirection = true;
