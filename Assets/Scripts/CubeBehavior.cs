@@ -259,14 +259,6 @@ public class CubeBehavior : MonoBehaviour
         }
         i++;
         j++;
-        /*for(int i = 0; i < end.x; i+=x)
-        {
-            GameObject capsule = GameObject.CreatePrimitive(PrimitiveType.Capsule);
-            capsule.transform.position = new Vector3(0, 0, i);
-            capsule.transform.eulerAngles = new Vector3(90, 0, 0);
-            capsule.transform.localScale = new Vector3(0.5f, 0.5f, 0.5f);
-            rend.material.color = Color.white;
-        }*/
 
     }
 }
