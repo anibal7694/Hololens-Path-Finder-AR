@@ -20,15 +20,9 @@ public class CubeBehavior : MonoBehaviour
     Vector3 destination = new Vector3(0, 0, 0);
     Vector3 offset;
     Vector3 actualCameraPosition;
-    //public Vector3 currentpos;
     public Vector3[] points = new Vector3[100];
 
-    //public Text coordinates;
-    //public Text sourceText;
-    //public Text destinationText;
     public Text debugger;
-    //public Text serverReturns;
-    //public Text updateText;
 
     public Camera mainCam;
     GameObject cube;
@@ -38,9 +32,6 @@ public class CubeBehavior : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        //mainCam = Camera.main;
-        // Camera.main.transform.position = new Vector3(0, 0, 0);
-        //points[6] = winlab3;
         debugger.text = "Calling Coroutine";
 
         StartCoroutine(GetRequest1());
