@@ -192,37 +192,7 @@ public class CubeBehavior : MonoBehaviour
     // Update is called once per frame
     /*void Update()
     {
-        updateText.text = "Reached update! Kill me pls!";
-        actualCameraPosition.x = (int)mainCam.transform.position.x + offset.x;
-        actualCameraPosition.y = (int)mainCam.transform.position.y + offset.y;
-        actualCameraPosition.z = (int)mainCam.transform.position.z + offset.z;
-        coordinates.text = "( " +actualCameraPosition.x.ToString() + " , " + actualCameraPosition.y.ToString() + " , " + actualCameraPosition.z.ToString() + " )";
-        source = points[i];
-        destination = points[j];
-        sourceText.text = "Source :" + source.ToString();
-        destinationText.text = "Destination: " + destination.ToString();
-        if (i == 0 && j == 1)
-        {
-            DrawCubes(source, destination);
-        }
-        else
-        {
-            if (actualCameraPosition == source)
-            {
-                //i++;
-                //j++;
-                for (int i = 0; i < z; i++)
-                {
-                    //Destroy(GameObject.FindGameObjectWithTag("cubes"));
-                    GameObject.FindGameObjectWithTag("cubes").SetActive(false);
-                }
-                DrawCubes(source, destination);
-            }
-        }
-        if (source == points[5])
-        {
-            return;
-        }
+    
     }*/
     IEnumerator NewGetRequest()
     {
@@ -286,10 +256,6 @@ public class CubeBehavior : MonoBehaviour
                 cube.tag = "cubes";
                 z++;
             }
-            /*if (Vector3.Distance(actualCameraPosition, points[j - 1]) > Vector3.Distance(points[i - 1], points[j - 1]) && Mathf.Abs(actualCameraPosition.z - points[i - 1].z) > 1 && changeInDirection == true)
-            {
-                StartCoroutine(NewGetRequest());
-            }*/
         }
         i++;
         j++;
